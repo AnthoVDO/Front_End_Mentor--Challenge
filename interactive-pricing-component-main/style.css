@@ -1,0 +1,141 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal
+}
+
+ul {
+    list-style: none
+}
+
+button,
+input,
+select {
+    margin: 0
+}
+
+html {
+    box-sizing: border-box
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit
+}
+
+img,
+video {
+    height: auto;
+    max-width: 100%
+}
+
+iframe {
+    border: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+td,
+th {
+    padding: 0
+}
+
+
+/* Color */
+
+:root {
+    --full-slider-bar: hsl(174, 77%, 80%);
+    --slider-bg: hsl(174, 86%, 45%);
+    --discount-bg: hsl(14, 92%, 95%);
+    --discount-txt: hsl(15, 100%, 70%);
+    --tax: hsl(226, 100%, 87%);
+    --price-component-bg: hsl (0, 0%, 100%);
+    --main-bg: hsl(230, 100%, 99%);
+    --empty-slider: hsl(224, 65%, 95%);
+    --toggle-bg: hsl(223, 50%, 87%);
+    --text: hsl(225, 20%, 60%);
+    --txt-and-tax: hsl(227, 35%, 25%);
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--main-bg);
+    color: var(--text);
+    background-image: url(./images/bg-pattern.svg);
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+
+/* Start here */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100vw;
+    height: 100vh;
+}
+
+.top {
+    background-image: url(./images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position-x: center;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--txt-and-tax);
+    font-weight: 800;
+}
+
+h2 {
+    margin-top: 1.2em;
+    font-size: 0.8em;
+    text-align: center;
+    line-height: 1.8em;
+    font-weight: 600;
+}
