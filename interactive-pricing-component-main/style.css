@@ -101,6 +101,7 @@ body {
     background-image: url(./images/bg-pattern.svg);
     background-size: auto;
     background-repeat: no-repeat;
+    background-position-y: -50%;
 }
 
 
@@ -110,6 +111,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
+    align-content: center;
     width: 100vw;
     height: 100vh;
 }
@@ -117,7 +120,7 @@ body {
 .top {
     background-image: url(./images/pattern-circles.svg);
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 55%;
     background-position-x: center;
     height: 25%;
     display: flex;
@@ -138,4 +141,11 @@ h2 {
     text-align: center;
     line-height: 1.8em;
     font-weight: 600;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
 }
