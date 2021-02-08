@@ -103,7 +103,7 @@ th {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     align-content: center;
     width: 100vw;
@@ -126,6 +126,7 @@ th {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -141,6 +142,7 @@ h2 {
     text-align: center;
     line-height: 1.6em;
     font-weight: 600;
+    width: 170px;
 }
 
 .cart {
@@ -238,6 +240,7 @@ h2 {
     background-color: var(--toggle-bg);
     margin: 0 15px;
     margin-bottom: -6px;
+    cursor: pointer;
 }
 
 .cart__option--circle {
@@ -268,14 +271,22 @@ h2 {
     display: none;
 }
 
-.cart__txt {
+.cart__box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     border-top: solid 1px var(--empty-slider);
+}
+
+.cart__txt {
     padding-top: 20px;
     font-size: 0.7em;
     letter-spacing: 0.05em;
     line-height: 2em;
     text-align: center;
-    width: 100%;
 }
 
 .cart__txt svg {
@@ -286,4 +297,74 @@ h2 {
     background-color: var(--txt-and-tax);
     color: var(--text);
     font-weight: 600;
+}
+
+
+/* Code above == mobile first */
+
+
+/* code below == responsive */
+
+@media(min-height:695px) {
+    .container {
+        height: 695px;
+    }
+}
+
+@media(min-width:660px) {
+    h1 {
+        font-size: 1.3em;
+    }
+    h2 {
+        width: 100%;
+    }
+    .cart {
+        padding-top: 25px;
+        width: 500px;
+        flex-direction: row;
+        align-content: center;
+        align-items: stretch;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .cart__top {
+        order: 1;
+        align-self: flex-start;
+        padding: 30px 0 0;
+    }
+    .cart__slide {
+        width: 100%;
+        order: 3;
+        flex-grow: 2;
+    }
+    .cart__price {
+        padding: 30px 0 0;
+        margin-top: -12px;
+        order: 2;
+    }
+    .cart__option {
+        order: 4;
+    }
+    .cart__box {
+        width: 100%;
+        padding-top: 25px;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+        order: 5;
+    }
+    .cart__txt {
+        text-align: left;
+        margin: 0;
+        padding: 0;
+    }
+    .cart__btn {
+        margin: 0;
+        padding: 0;
+    }
+    .cart__option__discount--hide {
+        display: inline;
+        margin-left: -37px;
+    }
 }
