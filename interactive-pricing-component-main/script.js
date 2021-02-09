@@ -11,7 +11,7 @@ const price = {
 
 slider.addEventListener("mousedown", (e) => {
     let value = slider.value;
-    slider.style.background = `linear-gradient(90deg, hsl(174, 77%, 80%)${value}%, hsl(224, 65%, 95%)10%)`
+    slider.style.background = `linear-gradient(90deg, hsl(174, 77%, 80%)${value}%, hsl(224, 65%, 95%)10%)`;
 })
 
 slider.addEventListener("mouseup", (e) => {
@@ -34,7 +34,7 @@ slider.addEventListener("mouseup", (e) => {
                     slider.value = 75;
                     point = 3
                 } else {
-                    if (value < 101) {
+                    if (value < 106) {
                         slider.value = 100;
                         point = 4
                     }
