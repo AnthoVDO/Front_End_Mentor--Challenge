@@ -1,5 +1,5 @@
 Deployed with Vercel
-[Deployed here](https://interactive-pricing-component-chi.vercel.app/);
+[Deployed here](https://interactive-pricing-component-chi.vercel.app/)
 
 
 
