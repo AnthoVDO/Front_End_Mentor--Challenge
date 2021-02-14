@@ -156,8 +156,128 @@ body {
 }
 
 .vr__description {
-  font-size: 1em;
+  font-size: 0.9em;
   color: var(--Dark_Gray);
+  line-height: 1.5em;
+}
+
+.creation__title {
+  padding-bottom: 40px;
+}
+
+.creation__title__h3 {
+  width: 120px;
+  line-height: 1.2em;
+  font-weight: lighter;
+  padding-bottom: 1em;
+  padding-left: 1em;
+}
+
+.creation__el {
+  width: 80%;
+  height: 6em;
+  color: var(--White);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1em;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.deep-earth {
+  background-image: url("../images/mobile/image-deep-earth.jpg");
+}
+.deep-earth h3 {
+  width: 80px;
+}
+
+.night-arcarde {
+  background-image: url("../images/mobile/image-night-arcade.jpg");
+}
+
+.soccer-team {
+  background-image: url("../images/mobile/image-soccer-team.jpg");
+}
+
+.the-grid {
+  background-image: url("../images/mobile/image-grid.jpg");
+}
+.the-grid h3 {
+  width: 80px;
+}
+
+.from-up-above {
+  background-image: url("../images/mobile/image-from-above.jpg");
+}
+
+.pocket-borealis {
+  background-image: url("../images/mobile/image-pocket-borealis.jpg");
+}
+
+.the-curiosity {
+  background-image: url("../images/mobile/image-curiosity.jpg");
+}
+
+.make-it-fisheye {
+  background-image: url("../images/mobile/image-fisheye.jpg");
+}
+
+.creation__btn {
+  padding: 10px 40px;
+  border: solid 2px var(--Very_Dark_Gray);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-top: 20px;
+  margin-bottom: 70px;
+  font-size: 0.8em;
+}
+
+.footer {
+  width: 100vw;
+  background-color: var(--Black);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+
+.footer__logo {
+  background-image: url(../images/logo.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 50px 20px 30px 20px;
+  width: 35%;
+  height: 1.5em;
+}
+
+.footer__nav {
+  margin-bottom: 40px;
+}
+.footer__nav ul li {
+  font-size: 0.8em;
+  list-style-type: none;
+  padding: 0.7em;
+  text-align: center;
+}
+.footer__nav ul li a {
+  text-decoration: none;
+  color: var(--Dark_Gray);
+  cursor: pointer;
+}
+
+.footer__social__logo {
+  margin: 7px;
+}
+
+.footer__copyright {
+  margin: 20px 20px 60px 20px;
+  font-size: 0.8em;
+  color: var(--Very_Dark_Gray);
 }
 
 /*# sourceMappingURL=style.css.map */
