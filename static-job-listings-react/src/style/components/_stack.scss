@@ -1,0 +1,14 @@
+.stack {
+    display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+    li {
+        padding: 5px;
+        margin: 10px;
+        background-color: $Filter;
+        color: $Primary;
+        font-weight: 700;
+        font-size: 0.8em;
+        border-radius: 5px;
+    }
+}

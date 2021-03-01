@@ -1,25 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700&display=swap');
 $font-1: "Spartan",
 sans-serif;
-$color-1: #61dafb;
-$color-2: #f7f7f7;
-$color-3: #282c34;
-$color-4: rgb(32,
-35,
-42);
+//Primary cyan
+$Primary: hsl(180,
+29%,
+50%);
+//Secondary
+$Background:hsl(180,
+52%,
+96%);
+$Filter:hsl(180,
+31%,
+95%);
+$Dark:hsl(180,
+8%,
+52%);
+$VeryDark:hsl(180,
+14%,
+20%);
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+
+/*
 body {
-    margin: 0.4rem auto;
-    max-width: 1296px;
+    margin: 0;
+    max-width: 1440px;
     font-family: $font-1;
     color: $color-3;
     background-color: $color-2;
 }
+*/
 
 li {
     list-style-type: none;
@@ -27,10 +41,7 @@ li {
 
 a {
     text-decoration: none;
-    color: $color-3;
     cursor: pointer;
 }
 
-a:visited {
-    color: $color-3;
-}
+a:visited {}

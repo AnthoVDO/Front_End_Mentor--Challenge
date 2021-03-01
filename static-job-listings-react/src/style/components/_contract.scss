@@ -1,4 +1,16 @@
 .contract {
     display: flex;
     flex-direction: row;
+    color: $Dark;
+    li {
+        margin-right: 10px;
+        &::before {
+            content: '\00B7';
+            padding-right: 10px;
+            font-weight: 700;
+        }
+        &:first-child:before {
+            display: none;
+        }
+    }
 }

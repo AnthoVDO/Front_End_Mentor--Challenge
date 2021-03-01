@@ -4,10 +4,13 @@ const Stack = ( {data} ) => {
 
 
     return (
-        <ul>
+        <ul className="stack">
             {data[0].languages.map(e =>{ 
                 const key = Math.floor(Math.random() * Math.floor(1000));
-                return <li key={key}>{e}</li>})}
+                return <li className="stack-li" key={key}>{e}</li>})}
+                {data[0].tools.map(e =>{ 
+                const key = Math.floor(Math.random() * Math.floor(1000));
+                return <li className="stack-li" key={key}>{e}</li>})}
         </ul>
     );
 };

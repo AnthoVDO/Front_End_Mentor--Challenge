@@ -1,8 +1,18 @@
 .update {
     flex-direction: row;
     display: flex;
+    align-items: center;
     li {
-        font-size: 0.8em;
-        margin-left: 10px;
+        font-size: 0.7em;
+        padding: 3px 5px;
+        margin: 1px 3px;
+        color: white;
+        border-radius: 8px;
+    }
+    .update-new {
+        background-color: $Primary;
+    }
+    .update-featured {
+        background-color: $VeryDark;
     }
 }
