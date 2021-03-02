@@ -4,6 +4,8 @@
     color: $Dark;
     li {
         margin-right: 10px;
+        font-size: 0.8em;
+        font-weight: 600;
         &::before {
             content: '\00B7';
             padding-right: 10px;

@@ -6,10 +6,10 @@ const Update = ({data}) => {
 
     return (
         <ul className="update">
-            {data[0].new &&
+            {data.new &&
                 <li className='update-new'>NEW!</li>
             }
-            {data[0].featured &&
+            {data.featured &&
                 <li className='update-featured'>FEATURED</li>
             }
         </ul>

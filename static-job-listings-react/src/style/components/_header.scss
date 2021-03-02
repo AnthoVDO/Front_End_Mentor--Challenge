@@ -1,0 +1,18 @@
+.header {
+    background-image: url(../asset/bg-header-desktop.svg);
+    background-size: cover;
+    background-color: $Dark;
+    width: 100%;
+    height: 120px;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $Dark;
+        opacity: 40%;
+    }
+}

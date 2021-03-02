@@ -1,0 +1,43 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $Background;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.filter {
+    position: absolute;
+    width: 80%;
+    height: 60px;
+    z-index: 1;
+    background-color: white;
+    top: -25px;
+    border-radius: 5px;
+    padding: 19px;
+}
+
+.clear {
+    position: absolute;
+    right: 20px;
+    top: 17px;
+    padding: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    color: $Primary;
+    background-color: white;
+    border: none;
+}
+
+.filtered {
+    padding: 5px;
+    margin: 10px;
+    background-color: $Filter;
+    color: $Primary;
+    font-weight: 700;
+    font-size: 0.7em;
+    border-radius: 5px;
+}
