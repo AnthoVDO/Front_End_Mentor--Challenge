@@ -2,7 +2,6 @@ import React from 'react';
 import Contract from './Contract';
 import Stack from './Stack';
 import Update from './Update';
-//import Datas from "../data.json";
 
 const Card = ({datas, onClickBtn}) => {
 
@@ -16,7 +15,10 @@ const Card = ({datas, onClickBtn}) => {
        { datas.map(data=>
         (
             
-            <div className='card'  key={Math.floor(Math.random() * Math.floor(1000))}>
+            <div /*className='card'  */
+            key={Math.floor(Math.random() * Math.floor(1000))}
+            className={data.featured ? "card-featured card" : "card"}
+            >
             <div className="card-left">
             <img src={data.logo} alt={data.company+ "'s logo"}/> {/*Company's picture */}
             <div className="card-left-top">

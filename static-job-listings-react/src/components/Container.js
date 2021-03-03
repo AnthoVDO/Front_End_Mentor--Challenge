@@ -6,21 +6,40 @@ import {useState} from  'react';
 const Container = () => {
 
     const[onFilter, setOnFilter] = useState([]);
-    /*const[word, setWord] = useState([]);*/
+    const[dataFiltered, setDataFiltered] = useState([...Datas]);
+
+    //adding the filter
 
     const onClickBtn = (e) => {
 
-        let ok = onFilter.indexOf(<span className="filtered">{e.target.innerText}</span>);
-        const update = [...onFilter, <span className="filtered">{e.target.innerText}</span>];
-
-        if(ok===-1){
-            setOnFilter(update)
-        }
-        
-        
+        let tempData = dataFiltered.filter(
+            function(el){
+                return (e.target.innerText === el.role || 
+                e.target.innerText === el.level||
+                el.languages.indexOf(e.target.innerText)>-1||
+                el.tools.indexOf(e.target.innerText)>-1
+                )
             }
+        )
+
+        
+
+        //Add filter text in the filter bar
+        let ok = onFilter.indexOf(e.target.innerText);
+        
+        if(ok===-1){
+            return [setOnFilter([...onFilter, e.target.innerText]), setDataFiltered(tempData)];
+        }
+        else{
+            return null
+        }}
             
-            
+    // Removing the filter
+    
+    const clearAll = ()=>{
+        setOnFilter([]);
+        setDataFiltered([...Datas]);
+    }
         
         
     
@@ -30,14 +49,18 @@ const Container = () => {
     return (
         
         <div className="container">
+        {onFilter.length>0 && 
         <div className="filter">
-        {onFilter.map(e=> e)}
-            <button className="clear">
+        {onFilter.map(e=> <span className="filtered">{e}</span>)}
+            <button className="clear" onClick={clearAll}>
             
             Clear
             </button>
         </div>
-            <Card datas={Datas} onClickBtn={onClickBtn}/>
+        }
+        
+
+            <Card datas={dataFiltered} onClickBtn={onClickBtn}/>
         </div>
     );
 };
