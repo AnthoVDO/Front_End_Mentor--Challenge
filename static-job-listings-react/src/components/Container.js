@@ -11,12 +11,10 @@ const Container = () => {
     const onClickBtn = (e) => {
 
         let ok = onFilter.indexOf(<span className="filtered">{e.target.innerText}</span>);
+        const update = [...onFilter, <span className="filtered">{e.target.innerText}</span>];
 
-        
-        
-            if(ok === -1){
-            console.log(ok);
-           return setOnFilter([...onFilter, <span className="filtered">{e.target.innerText}</span>])
+        if(ok===-1){
+            setOnFilter(update)
         }
         
         
