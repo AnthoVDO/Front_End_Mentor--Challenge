@@ -13,3 +13,25 @@
         cursor: pointer;
     }
 }
+
+@media(max-width: 1000px) {
+    .stack {
+        border-top: 3px solid $Filter;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 650px) {
+    .stack {
+        height: 126px;
+        margin-right: 0;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding-top: 15px;
+        padding-bottom: -5px;
+        li {
+            margin-left: 0;
+            padding: 10px;
+        }
+    }
+}

@@ -16,7 +16,7 @@ const Card = ({datas, onClickBtn}) => {
         (
             
             <div /*className='card'  */
-            key={Math.floor(Math.random() * Math.floor(1000))}
+            key={Math.floor(Math.random() * Math.floor(10000000))}
             className={data.featured ? "card-featured card" : "card"}
             >
             <div className="card-left">

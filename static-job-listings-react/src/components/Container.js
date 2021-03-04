@@ -14,7 +14,8 @@ const Container = () => {
 
         let tempData = dataFiltered.filter(
             function(el){
-                return (e.target.innerText === el.role || 
+                return (
+                e.target.innerText === el.role || 
                 e.target.innerText === el.level||
                 el.languages.indexOf(e.target.innerText)>-1||
                 el.tools.indexOf(e.target.innerText)>-1
@@ -34,24 +35,26 @@ const Container = () => {
             return null
         }}
             
-    // Removing the filter
+    // Removing all the filter
     
     const clearAll = ()=>{
         setOnFilter([]);
         setDataFiltered([...Datas]);
     }
-        
-        
-    
-
-
-
+  
+            
     return (
-        
-        <div className="container">
+        <div className={onFilter.length>0?"container container__more-space" :"container"}>
         {onFilter.length>0 && 
         <div className="filter">
-        {onFilter.map(e=> <span className="filtered">{e}</span>)}
+        {onFilter.map(e=>{
+             
+                return(
+                    <span key={Math.floor(Math.random() * Math.floor(10000000))} className="filtered">{e}</span>
+                )
+                }
+                
+             )}
             <button className="clear" onClick={clearAll}>
             
             Clear
