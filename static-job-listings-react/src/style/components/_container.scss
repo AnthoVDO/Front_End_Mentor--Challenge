@@ -38,6 +38,9 @@
     color: $Primary;
     background-color: white;
     border: none;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .filtered {
@@ -48,6 +51,15 @@
     font-weight: 700;
     font-size: 0.7em;
     border-radius: 5px;
+}
+
+.clearOne {
+    margin: 0 0 0 5px;
+    font-size: 1.2em;
+    line-height: 1.4px;
+    &:hover {
+        background-color: $VeryDark;
+    }
 }
 
 @media(max-width: 1000px) {
