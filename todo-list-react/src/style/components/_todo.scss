@@ -1,0 +1,25 @@
+.todo {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    background-color: blueviolet;
+    .todo-list {
+        padding: 10px 0;
+        position: relative;
+        .todo-check {
+            border-radius: 50%;
+        }
+        .todo-check:checked {
+            background-image: url(../assets/icon-check.svg);
+        }
+        label {
+            padding-left: 15px;
+        }
+        button {
+            background: none;
+            border: none;
+            position: absolute;
+            right: 10px;
+        }
+    }
+}
