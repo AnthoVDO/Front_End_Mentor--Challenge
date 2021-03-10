@@ -1,4 +1,5 @@
 import React from 'react';
+import Filter from './Filter';
 import Header from './Header';
 import Input from './Input';
 import Todo from './Todo';
@@ -9,6 +10,8 @@ const Container = () => {
             <Header/>
             <Input/>
             <Todo/>
+            <Filter/>
+
         </div>
     );
 };

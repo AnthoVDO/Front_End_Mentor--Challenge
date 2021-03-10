@@ -1,0 +1,10 @@
+.App {
+    width: 100%;
+    background-image: url(../assets/bg-desktop-dark.jpg);
+    background-repeat: no-repeat;
+    background-color: $color-dark-1;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 100vh;
+}

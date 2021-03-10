@@ -9,6 +9,21 @@ const Todo = () => {
            <label htmlFor="test">Complet javascript course</label>
            <button><ImCross/></button>
            </div>
+           <div className="todo-list">
+           <input className="todo-list-check" type="checkbox" name="test" id="001"/>
+           <label htmlFor="test">Complet javascript course</label>
+           <button><ImCross/></button>
+           </div>
+           <div className="todo-list">
+           <input className="todo-list-check" type="checkbox" name="test" id="001"/>
+           <label htmlFor="test">Complet javascript course</label>
+           <button><ImCross/></button>
+           </div>
+           <div className="todo-list">
+           <input className="todo-list-check" type="checkbox" name="test" id="001"/>
+           <label htmlFor="test">Complet javascript course</label>
+           <button><ImCross/></button>
+           </div>
         </div>
     );
 };

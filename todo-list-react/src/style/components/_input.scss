@@ -1,9 +1,52 @@
 .input {
-    width: auto;
+    width: 100%;
     padding: 10px;
     margin: 25px 0 25px;
-    input {
+    line-height: 2em;
+    background-color: $color-dark-2;
+    form {
+        display: grid;
+        grid-template-columns: 24px auto 24px;
+    }
+    .input-check {
+        grid-column: 1/2;
+        line-height: 1.5em;
+        height: 20px;
+        width: 20px;
+        align-self: center;
+    }
+    .input-field {
+        grid-column: 2/3;
+        margin-left: 15px;
+        line-height: 24px;
         width: 100%;
-        line-height: 1.5rem;
+        background: none;
+        border: none;
+        align-self: center;
+        &::placeholder {
+            color: $color-dark-4;
+            font-size: 14.4px;
+        }
+    }
+    .input-btn {
+        grid-column: -1/-2;
+        height: 20px;
+        width: 20px;
+        padding-top: 1.3px;
+        padding-right: 1.3px;
+        border: none;
+        align-self: center;
+        background: none;
+        border: none;
+        path {
+            stroke: $color-dark-4;
+            stroke-width: 3;
+            height: 100%;
+            width: 100%;
+        }
+        svg {
+            height: 100%;
+            width: 100%;
+        }
     }
 }

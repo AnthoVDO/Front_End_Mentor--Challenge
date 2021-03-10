@@ -1,25 +1,38 @@
 .todo {
     width: 100%;
     display: block;
-    padding: 10px;
-    background-color: blueviolet;
+    background-color: $color-dark-2;
     .todo-list {
-        padding: 10px 0;
-        position: relative;
-        .todo-check {
+        padding: 15px 10px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 24px auto 24px;
+        color: $color-dark-4;
+        border-bottom: 1px solid $color-dark-3;
+        .todo-list-check {
+            grid-column: 1/2;
             border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            align-self: center;
         }
-        .todo-check:checked {
+        .todo-list-check:checked {
             background-image: url(../assets/icon-check.svg);
         }
         label {
+            grid-column: 2/3;
             padding-left: 15px;
+            width: 80%;
+            line-height: 24px;
+            align-self: center;
+            font-size: 0.8em;
         }
         button {
+            grid-column: -1/-2;
             background: none;
             border: none;
-            position: absolute;
-            right: 10px;
+            align-self: center;
+            color: $color-dark-4;
         }
     }
 }

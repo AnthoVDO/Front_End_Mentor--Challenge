@@ -5,8 +5,16 @@ const Input = () => {
     return (
         <div className="input">
         <form action="submit">
-            <input type="text" placeholder="Add a task"/>
-            <button><GrAddCircle/></button>
+            <input 
+            className="input-check"
+            type="checkbox" 
+            name="add" 
+            id="add"/>
+            <input 
+            className="input-field"
+            type="text" 
+            placeholder="Add a task"/>
+            <button className="input-btn"><GrAddCircle/></button>
         </form>
             
         </div>
