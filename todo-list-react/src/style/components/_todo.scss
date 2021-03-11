@@ -12,12 +12,21 @@
         .todo-list-check {
             grid-column: 1/2;
             border-radius: 50%;
+            border: 1px solid $color-light-4;
             height: 20px;
             width: 20px;
             align-self: center;
+            appearance: none;
         }
         .todo-list-check:checked {
-            background-image: url(../assets/icon-check.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background: linear-gradient(135deg, rgba(58, 123, 253, 1) 0%, rgba(192, 88, 243, 1) 80%) !important;
+            &::after {
+                content: url(../assets/icon-check.svg);
+                margin-left: 4px;
+                margin-top: 1px;
+            }
         }
         label {
             grid-column: 2/3;

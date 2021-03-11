@@ -1,7 +1,7 @@
 import React from 'react';
 import { GrAddCircle } from "react-icons/gr";
 
-const Input = () => {
+const Input = ({NewComponent}) => {
     return (
         <div className="input">
         <form action="submit">
@@ -14,7 +14,7 @@ const Input = () => {
             className="input-field"
             type="text" 
             placeholder="Add a task"/>
-            <button className="input-btn"><GrAddCircle/></button>
+            <button className="input-btn" onClick={NewComponent}><GrAddCircle/></button>
         </form>
             
         </div>
