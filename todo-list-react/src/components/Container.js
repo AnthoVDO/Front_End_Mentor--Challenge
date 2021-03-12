@@ -34,6 +34,7 @@ const Container = () => {
     }])
 
     const [filter, setFilter] = useState([...lists]);
+    const [filterProp, setFilterProp] = useState("All")
 //creat new task
     const NewComponent = (e) => {
         e.preventDefault();
@@ -43,7 +44,7 @@ const Container = () => {
         const checked = e.currentTarget.parentNode.querySelector('.input-check').checked;
         let newTask = {id:id, checked: checked, task:text };
         e.currentTarget.previousSibling.value = "";
-        return(setLists([...lists, newTask]));
+        return(setLists([...lists, newTask], filterTask));
     }
 // mark as completed
     const completed = (e) => {
@@ -55,17 +56,33 @@ const Container = () => {
     const deletTask = (e) => {
         const myElement = e.currentTarget.parentNode.id;
         console.log(myElement)
-        setLists(lists.filter(el=>el.id.toString() !== myElement ))
+        setLists(lists.filter(el=>el.id.toString() !== myElement ));
     }
 // filter 
-
+    const filterTask = (e) => {
+        setFilterProp(e.currentTarget.innerText.toString());
+        if(filterProp === "All"){
+            setFilter(...lists);
+        }else if(filterProp === "Active"){
+            let tempFilter = [...lists];
+            setFilter(tempFilter.filter(el=>{
+                return el.checked === true;
+            }))
+        }else{
+            let tempFilter = [...lists];
+            setFilter(tempFilter.filter(el=>{
+                return el.checked === false;
+            }))
+        }
+        
+    }
 
     return (
         <div className="container">
             <Header/>
             <Input NewComponent={NewComponent}/>
-            <Todo lists={lists} completed={completed} deletTask={deletTask}/>
-            <Filter/>
+            <Todo lists={filter} completed={completed} deletTask={deletTask}/>
+            <Filter filterTask={filterTask}/>
 
         </div>
     );
