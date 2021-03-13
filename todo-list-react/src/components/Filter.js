@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Filter = ({filterTask}) => {
+const Filter = ({filterTask, clearComplet}) => {
     return (
         <div className="filter">
         <div className="filter-items-left">5 items left</div>
@@ -9,7 +9,7 @@ const Filter = ({filterTask}) => {
             <button onClick={filterTask} className="filter-select-active">Active</button>
             <button onClick={filterTask} className="filter-select-completed">Completed</button>
         </div>
-        <button className="filter-clear-completed">Clear Completed</button>
+        <button className="filter-clear-completed" onClick={clearComplet}>Clear Completed</button>
             
         </div>
     );

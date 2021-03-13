@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsFillBrightnessHighFill } from "react-icons/bs";
+import { BsFillBrightnessHighFill, BsMoon } from "react-icons/bs";
 
 const Icon = () => {
     return (

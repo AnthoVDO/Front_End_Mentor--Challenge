@@ -33,7 +33,7 @@ const Container = () => {
         task:"Complete ToDo App on FrontEnd Mentor"
     }])
 
-    const [filter, setFilter] = useState([...lists]);
+        
     const [filterProp, setFilterProp] = useState("All")
 //creat new task
     const NewComponent = (e) => {
@@ -44,45 +44,57 @@ const Container = () => {
         const checked = e.currentTarget.parentNode.querySelector('.input-check').checked;
         let newTask = {id:id, checked: checked, task:text };
         e.currentTarget.previousSibling.value = "";
-        return(setLists([...lists, newTask], filterTask));
+        return setLists([...lists, newTask]);
+         
     }
 // mark as completed
     const completed = (e) => {
         const myElement = e.target.parentNode.id;
-        setLists(lists.map((el)=> el.id.toString() === myElement? {...el, checked: !el.checked} : el));
+        return setLists(lists.map((el)=> el.id.toString() === myElement? {...el, checked: !el.checked} : el));
+        
     }
 
 // delet a task
     const deletTask = (e) => {
         const myElement = e.currentTarget.parentNode.id;
         console.log(myElement)
-        setLists(lists.filter(el=>el.id.toString() !== myElement ));
+        return setLists(lists.filter(el=>el.id.toString() !== myElement ));
+        
     }
 // filter 
     const filterTask = (e) => {
-        setFilterProp(e.currentTarget.innerText.toString());
-        if(filterProp === "All"){
-            setFilter(...lists);
-        }else if(filterProp === "Active"){
-            let tempFilter = [...lists];
-            setFilter(tempFilter.filter(el=>{
-                return el.checked === true;
-            }))
+        const tempFilterValue = e.currentTarget.innerText.toString();
+        if(tempFilterValue === "Active"){
+            return setFilterProp(tempFilterValue);
+            
+        }else if(tempFilterValue === "Completed"){
+            return setFilterProp(tempFilterValue);
+            
         }else{
-            let tempFilter = [...lists];
-            setFilter(tempFilter.filter(el=>{
-                return el.checked === false;
-            }))
-        }
-        
+            return setFilterProp("All");
+        }   
     }
+
+// Clear completed
+
+    const clearComplet = () => {
+        setLists(
+            lists.filter(x=>{
+                return x.checked === false;
+            })
+        )
+    }
+
+
+
+
 
     return (
         <div className="container">
             <Header/>
             <Input NewComponent={NewComponent}/>
-            <Todo lists={filter} completed={completed} deletTask={deletTask}/>
-            <Filter filterTask={filterTask}/>
+            <Todo lists={lists} completed={completed} deletTask={deletTask} filterProp={filterProp} />
+            <Filter filterTask={filterTask} clearComplet={clearComplet}/>
 
         </div>
     );
