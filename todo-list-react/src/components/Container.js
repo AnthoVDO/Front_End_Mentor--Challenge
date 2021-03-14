@@ -41,16 +41,20 @@ const Container = () => {
         let id = new Date();
         id = parseInt(Date.parse(id), 16); //The created date is transformed in millisecond and then to hexacode
         const text = e.currentTarget.previousSibling.value;
+        if(text === ""){
+            return prompt("You need to add a text");
+        }
         const checked = e.currentTarget.parentNode.querySelector('.input-check').checked;
         let newTask = {id:id, checked: checked, task:text };
         e.currentTarget.previousSibling.value = "";
-        return setLists([...lists, newTask]);
+        return [setLists([...lists, newTask]), setTaskOrder([...taskOrder, newTask])];
          
     }
 // mark as completed
     const completed = (e) => {
         const myElement = e.target.parentNode.id;
-        return setLists(lists.map((el)=> el.id.toString() === myElement? {...el, checked: !el.checked} : el));
+        setLists(lists.map((el)=> el.id.toString() === myElement? {...el, checked: !el.checked} : el))
+        return setTaskOrder(taskOrder.map((el)=> el.id.toString() === myElement? {...el, checked: !el.checked} : el));
         
     }
 
@@ -58,7 +62,8 @@ const Container = () => {
     const deletTask = (e) => {
         const myElement = e.currentTarget.parentNode.id;
         console.log(myElement)
-        return setLists(lists.filter(el=>el.id.toString() !== myElement ));
+        setLists(lists.filter(el=>el.id.toString() !== myElement ))
+        return setTaskOrder(taskOrder.filter(el=>el.id.toString() !== myElement ));
         
     }
 // filter 
@@ -83,18 +88,36 @@ const Container = () => {
                 return x.checked === false;
             })
         )
+        setTaskOrder(
+            taskOrder.filter(x=>{
+                return x.checked === false;
+            })
+        )
+    }
+// Items left
+    
+
+// drag and drop
+
+const [taskOrder, setTaskOrder] = useState(lists)
+    const handelOnDragEnd = (result)=>{
+        console.log(taskOrder);
+        if(!result.destination) return
+       const items = Array.from(taskOrder);
+       const [reorderItem] = items.splice(result.source.index, 1);
+       items.splice(result.destination.index, 0, reorderItem);
+       setTaskOrder(items)
     }
 
-
-
-
+let itemsLeft = taskOrder.filter(el=>el.checked === false).length;
 
     return (
         <div className="container">
             <Header/>
             <Input NewComponent={NewComponent}/>
-            <Todo lists={lists} completed={completed} deletTask={deletTask} filterProp={filterProp} />
-            <Filter filterTask={filterTask} clearComplet={clearComplet}/>
+            <Todo lists={taskOrder} completed={completed} deletTask={deletTask} filterProp={filterProp} handelOnDragEnd={handelOnDragEnd} />
+            <Filter filterTask={filterTask} clearComplet={clearComplet} filterProp={filterProp} itemsLeft={itemsLeft}/>
+            <div className="bottom"><h3>Drag and drop to reorder list</h3></div>
 
         </div>
     );

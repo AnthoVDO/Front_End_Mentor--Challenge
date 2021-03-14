@@ -23,6 +23,10 @@
             background: none;
             color: $color-light-5;
             border: none;
+            &:hover {
+                border: none;
+                color: $color-dark-4;
+            }
         }
     }
     .filter-clear-completed {
@@ -33,5 +37,12 @@
         background: none;
         color: $color-light-5;
         border: none;
+        &:hover {
+            border: none;
+            color: $color-dark-4;
+        }
+    }
+    .filter__active {
+        color: $primary-1 !important;
     }
 }

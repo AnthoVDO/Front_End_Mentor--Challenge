@@ -17,6 +17,7 @@
         appearance: none;
         border-radius: 50%;
         border: 1px solid $color-light-4;
+        cursor: pointer;
         &:checked {
             background-repeat: no-repeat;
             background-position: center;

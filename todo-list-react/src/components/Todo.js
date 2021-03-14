@@ -1,9 +1,15 @@
 import React from 'react';
 import { ImCross } from "react-icons/im";
+import {DragDropContext, Droppable, Draggable} from "react-beautiful-dnd";
 
-const Todo = ({lists, completed, deletTask, filterProp}) => {
+const Todo = ({lists, completed, deletTask, filterProp, handelOnDragEnd}) => {
+    
     return (
-        <div className="todo">
+
+        <DragDropContext onDragEnd={handelOnDragEnd}>
+        <Droppable droppableId="todo">
+        {(provided)=>(
+            <ul className="todo" {...provided.droppableProps} ref={provided.innerRef}>
 {
     lists.filter((e)=>{
         if(filterProp === "Active"){
@@ -16,22 +22,34 @@ const Todo = ({lists, completed, deletTask, filterProp}) => {
     }
 
     )
-    .map(el=>{
+    .map((el, index)=>{
                     return(
-                    <div className="todo-list" key={el.id} id={el.id}>
+                        <Draggable key={el.id} draggableId={el.id.toString()} index={index}>
+                        {(provided)=>(
+                            <li className="todo-list"  id={el.id} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
            <input className="todo-list-check" type="checkbox" name={el.id+"name"} checked={el.checked} onChange={completed}/>
-           <label htmlFor={el.id+"name"}>{el.task}</label>
+           <label htmlFor={el.id+"name"} className={el.checked===true? "todo__checked": ""}>{el.task}</label>
            <button onClick={deletTask}><ImCross/></button>
-           </div>
-                )   
+           </li>
+                    )}
+                    
+                        </Draggable>
+                )
+
          })}
 
 
 
 
 
-           
-        </div>
+           {provided.placeholder}
+        </ul>
+        )
+
+        }
+        
+        </Droppable>
+        </DragDropContext>
     );
 };
 
