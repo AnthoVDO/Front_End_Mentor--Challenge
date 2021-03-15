@@ -4,7 +4,7 @@ import Header from './Header';
 import Input from './Input';
 import Todo from './Todo';
 import {useState} from 'react';
-const Container = () => {
+const Container = ({lightMode, lightOn}) => {
 
     const [lists, setLists] = useState([{
         id:1,
@@ -94,7 +94,7 @@ const Container = () => {
             })
         )
     }
-// Items left
+
     
 
 // drag and drop
@@ -109,14 +109,17 @@ const [taskOrder, setTaskOrder] = useState(lists)
        setTaskOrder(items)
     }
 
+// Items left
 let itemsLeft = taskOrder.filter(el=>el.checked === false).length;
+
+
 
     return (
         <div className="container">
-            <Header/>
-            <Input NewComponent={NewComponent}/>
-            <Todo lists={taskOrder} completed={completed} deletTask={deletTask} filterProp={filterProp} handelOnDragEnd={handelOnDragEnd} />
-            <Filter filterTask={filterTask} clearComplet={clearComplet} filterProp={filterProp} itemsLeft={itemsLeft}/>
+            <Header lightOn={lightOn} lightMode={lightMode}/>
+            <Input NewComponent={NewComponent} lightMode={lightMode}/>
+            <Todo lists={taskOrder} completed={completed} deletTask={deletTask} filterProp={filterProp} handelOnDragEnd={handelOnDragEnd} lightMode={lightMode}/>
+            <Filter filterTask={filterTask} clearComplet={clearComplet} filterProp={filterProp} itemsLeft={itemsLeft} lightMode={lightMode}/>
             <div className="bottom"><h3>Drag and drop to reorder list</h3></div>
 
         </div>

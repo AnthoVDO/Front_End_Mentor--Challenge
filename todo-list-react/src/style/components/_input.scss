@@ -67,3 +67,21 @@
         }
     }
 }
+
+.input__lightMode {
+    color: $color-light-5 !important;
+    background-color: $color-light-2 !important;
+    .input-field {
+        &:focus {
+            color: $color-light-5;
+        }
+        &::placeholder {
+            color: $color-light-5;
+        }
+    }
+    .input-btn {
+        path {
+            stroke: $color-light-5;
+        }
+    }
+}

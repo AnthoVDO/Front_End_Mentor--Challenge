@@ -1,19 +1,25 @@
 import React from 'react';
 import { GrAddCircle } from "react-icons/gr";
 
-const Input = ({NewComponent}) => {
+const Input = ({NewComponent, lightMode}) => {
     return (
-        <div className="input">
+        <div 
+        className={lightMode===true ? "input input__lightMode": "input"}
+        >
         <form action="submit">
             <input 
-            className="input-check"
+            className={lightMode===true ? "input-check": "input-check" }
             type="checkbox" 
             name="add" 
             id="add"/>
             <input 
             className="input-field"
             type="text" 
-            placeholder="Add a task"/>
+            placeholder="Add a task"
+            
+
+            />
+            
             <button className="input-btn" onClick={NewComponent}><GrAddCircle/></button>
         </form>
             

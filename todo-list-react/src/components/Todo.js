@@ -2,14 +2,14 @@ import React from 'react';
 import { ImCross } from "react-icons/im";
 import {DragDropContext, Droppable, Draggable} from "react-beautiful-dnd";
 
-const Todo = ({lists, completed, deletTask, filterProp, handelOnDragEnd}) => {
+const Todo = ({lists, completed, deletTask, filterProp, handelOnDragEnd, lightMode}) => {
     
     return (
 
         <DragDropContext onDragEnd={handelOnDragEnd}>
         <Droppable droppableId="todo">
         {(provided)=>(
-            <ul className="todo" {...provided.droppableProps} ref={provided.innerRef}>
+            <ul className={lightMode===true? "todo todo__lightMode": "todo"} {...provided.droppableProps} ref={provided.innerRef}>
 {
     lists.filter((e)=>{
         if(filterProp === "Active"){

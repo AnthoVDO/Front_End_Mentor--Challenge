@@ -2,11 +2,11 @@ import React from 'react';
 import Icon from './Icon';
 
 
-const Header = () => {
+const Header = ({lightOn, lightMode}) => {
     return (
         <div className="header">
             <h1 className="header-h1">Todo</h1>
-            <Icon/>
+            <Icon lightOn={lightOn} lightMode={lightMode}/>
         </div>
     );
 };

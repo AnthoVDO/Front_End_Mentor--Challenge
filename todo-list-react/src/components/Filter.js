@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Filter = ({filterTask, clearComplet, filterProp, itemsLeft}) => {
+const Filter = ({filterTask, clearComplet, filterProp, itemsLeft, lightMode}) => {
     return (
-        <div className="filter">
+        <div className={lightMode===true? "filter filter__lightMode" : "filter"}>
         <div className="filter-items-left">{itemsLeft} items left</div>
         <div className="filter-select">
             <button onClick={filterTask} className={filterProp === "All"? "filter-select-all filter__active": "filter-select-all"}>All</button>
